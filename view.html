@@ -1,0 +1,51 @@
+<html>
+        <head>
+            <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+            <title>Результат</title>
+            <?php
+        if ($hit == "есть") {
+            echo "<link rel=\"stylesheet\" href=\"happy_view_style.css\">";
+            }
+            else
+            echo "<link rel=\"stylesheet\" href=\"sad_view_style.css\">";
+            ?>
+        </head>
+        <body>
+        <table>
+            <tr><th><p>Результат</p></th></tr>
+            <tr>
+                <td>Текущее время</td>
+                <td><?=$time?></td>
+            </tr>
+            <tr>
+                <td>Время работы скрипта</td>
+                <td><?=$worktime?></td>
+            </tr>
+            <tr>
+                <td>Переменная X</td>
+                <td>Переменная Y</td>
+                <td>Переменная R</td>
+                <td>Результат</td>
+            </tr>
+
+            <?php
+            array_push($_SESSION['arr'], "<tr> <td>$x</td> <td>$y</td> <td>$r</td> <td>$hit</td> </tr>");
+            foreach ($_SESSION['arr'] as $item) {
+            echo $item;
+            }
+            ?>
+        </table>
+        <?php
+        if ($hit == "есть") {
+        $content = " <div class=\"jaba\">
+            <div class=\"box happyJaba\"><img align=\"right\" width=\"200\" src=\"HappyJaba.png\"></div>
+        </div> ";
+        echo $content;
+        }
+        else
+        echo "<div class=\"jaba\">
+            <div class=\"sadJaba\"><img align=\"right\" width=\"200\" src=\"SadJaba.png\"></div>
+        </div>"
+        ?>
+        </body>
+</html>

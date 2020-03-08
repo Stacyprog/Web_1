@@ -1,0 +1,54 @@
+body {
+    background: url("SadEnv.jpg")0/cover fixed;
+    color: #151515;
+    font-family: Geneva, Arial, Helvetica, sans-serif;
+    font-size: 12px;
+}
+
+table {
+    margin: 2% 10%;
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.729);
+}
+
+td, tr {
+    text-align: left;
+    padding: 10px;
+}
+
+p{
+    font-weight: bold;
+    text-align: center;
+}
+
+.jaba {
+
+    display: flex;
+    position: fixed;
+    right: 0;
+    bottom:0;
+    z-index: -1;
+}
+.box {
+// background: url("SadJaba.png")0/cover fixed;
+    left: 5%;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    height: 200px;
+    margin: 0 auto 0 auto;
+    transform-origin: bottom;
+    width: 200px;
+}
+.happyJaba {
+    animation-name: happyJaba;
+    animation-timing-function: cubic-bezier(0.280, 0.840, 0.420, 1);
+}
+@keyframes happyJaba {
+    0%   { transform: scale(1,1)      translateY(0); }
+    10%  { transform: scale(1.1,.9)   translateY(0); }
+    30%  { transform: scale(.9,1.1)   translateY(-100px); }
+    50%  { transform: scale(1.05,.95) translateY(0); }
+    57%  { transform: scale(1,1)      translateY(-7px); }
+    64%  { transform: scale(1,1)      translateY(0); }
+    100% { transform: scale(1,1)      translateY(0); }
+}
